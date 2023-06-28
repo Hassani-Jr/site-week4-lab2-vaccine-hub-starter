@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
+const {PORT} = require('../vaccine-hub-api/config')
 
 
 const {NotFoundError} = require('./utils/errors')
@@ -24,7 +25,6 @@ app.use((req,res,err,next) => {
 })
 
 
-const PORT = process.env.PORT || 3001
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`)
